@@ -1,8 +1,7 @@
 #include <led_cluster.h>
-#include <pins.h>
+#include "../../include/pins.h"
 #include <led.h>
 #include <Arduino.h>
-#include <stdio.h>
 
 LedCluster::LedCluster(int number)
 {
@@ -11,7 +10,6 @@ LedCluster::LedCluster(int number)
 
 void LedCluster::init(int nr)
 {
-    char *buffer;
     switch (nr) {
         case 1:
             Serial.print("init clust 1\n");

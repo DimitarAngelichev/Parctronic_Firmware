@@ -4,7 +4,7 @@
 #include <HCSR04.h>
 #include <led_cluster.h>
 #include <u_sensor.h>
-#include "pins.h"
+#include "../../include/pins.h"
 
 class Cluster
 {

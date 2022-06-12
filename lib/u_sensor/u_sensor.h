@@ -2,7 +2,7 @@
 #define U_SENSOR_H
 
 #include <HCSR04.h>
-#include <pins.h>
+#include "../../include/pins.h"
 
 class USonicSensor
 {

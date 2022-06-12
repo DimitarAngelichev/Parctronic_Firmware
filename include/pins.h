@@ -1,4 +1,5 @@
-
+#ifndef PINS_H
+#define PINS_H
 
 #define LEDG1_1 22
 #define LEDG1_2 23
@@ -51,3 +52,5 @@
 
 #define SEN4_TRIG 0xA4
 #define SEN4_ECHO 0xA5
+
+#endif  // PINS_H

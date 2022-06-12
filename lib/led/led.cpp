@@ -1,7 +1,5 @@
 #include "Arduino.h"
 #include "led.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 #define PWM_Res 8
 #define PWM_Freq 1000
