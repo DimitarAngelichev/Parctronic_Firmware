@@ -3,7 +3,7 @@
 
 void Cluster::sonicsensor_test()
 {
-    Serial.println (this->usonic_sensor->get_value ()); 
+    Serial.println (this->usonic_sensor->get_value ());
     delay(60);
 }
 
@@ -11,7 +11,7 @@ void Cluster::sonicsensor_test()
 
     int dist = this->usonic_sensor->get_value ();
     Serial.print("Cluster Nr: ");
-    Serial.print(this->clusternr);
+    Serial.print(this->cluster);
     Serial.print(" Distance to Object: ");
     Serial.print(dist);
     Serial.print(" Setting: ");

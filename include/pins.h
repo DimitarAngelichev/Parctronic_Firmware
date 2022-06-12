@@ -1,6 +1,8 @@
 #ifndef PINS_H
 #define PINS_H
 
+#define BUTTON_PIN 49
+
 #define LEDG1_1 22
 #define LEDG1_2 23
 #define LEDG1_3 24

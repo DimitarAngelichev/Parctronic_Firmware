@@ -4,10 +4,10 @@
 #include <cluster.h>
 #include <buzzer_p.h>
 
-enum {
-    ON,
-    OFF
-} parktronic_states;
+enum parktronic_states {
+    PARK_ASSIST_OFF,
+    PARK_ASSIST_ON
+};
 
 class Parktronic
 {
@@ -18,12 +18,14 @@ class Parktronic
         Cluster *cluster_right;
         AlarmBuzzer *alarm_buzzer;
     public:
-        Parktronic(){
-            this->cluster_left = new Cluster(1); 
+        bool park_assist_state = PARK_ASSIST_OFF;
+
+        Parktronic() {
+            this->cluster_left = new Cluster(1);
             this->cluster_center_left = new Cluster(2);
             this->cluster_center_right = new Cluster(3);
             this->cluster_right = new Cluster(4);
-            this->alarm_buzzer= new AlarmBuzzer();
+            this->alarm_buzzer = new AlarmBuzzer();
         }
 
         void state_machine(parktronic_states state);

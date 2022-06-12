@@ -1,19 +1,22 @@
 #include <parktronic.h>
 
-Parktronic::Parktronic();
-{
+// Parktronic::Parktronic()
+// {
 
-}
+// }
 
 void Parktronic::state_machine (parktronic_states state) {
     switch (state) {
-        case ON:
+        case PARK_ASSIST_ON:
             //parktronic On
-
+            this->park_assist_state = PARK_ASSIST_ON;
+            this->alarm_buzzer->on();
             break;
-        case OFF:
+        case PARK_ASSIST_OFF:
             //parktronic off
-            
+            this->park_assist_state = PARK_ASSIST_OFF;
+            this->alarm_buzzer->off();
+
         default:
             break;
     }

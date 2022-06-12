@@ -3,7 +3,7 @@
 
 #include <Buzzer.h>
 
-#define B_PIN 10
+#define B_PIN 13
 
 class AlarmBuzzer
 {
@@ -15,6 +15,7 @@ class AlarmBuzzer
         AlarmBuzzer();
         void init();
         void on();
+        void off();
         void far();
         void close();
         void danger();

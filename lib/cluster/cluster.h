@@ -13,14 +13,14 @@ class Cluster
         //HCSR04 *hc;
         LedCluster *ledCluster;
         USonicSensor *usonic_sensor;
-        int clusternr=0;
-        
+        int cluster = 0;
+
     public:
-        Cluster (int cluster_nr) {
-            this->ledCluster = new LedCluster(cluster_nr);
-            this->usonic_sensor = new USonicSensor(cluster_nr);
-            this->clusternr=cluster_nr;
-            
+        Cluster (int cluster_index) {
+            this->ledCluster = new LedCluster(cluster_index);
+            this->usonic_sensor = new USonicSensor(cluster_index);
+            this->cluster = cluster_index;
+
         }
         // void on();
         // void off();

@@ -90,7 +90,7 @@ void LedCluster::LedClusterTest(int dist)
             this->red1->off();
             this->red2->off();
             this->red3->off();
-            
+
             break;
         case 3:
             this->green1->on();
@@ -169,7 +169,7 @@ void LedCluster::LedClusterTest(int dist)
             this->red2->on();
             this->red3->blink_once();
             break;
-        
+
         default:
             break;
     }

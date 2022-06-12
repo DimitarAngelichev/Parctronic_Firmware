@@ -12,6 +12,14 @@ void AlarmBuzzer::on()
     this->buzzer->sound(NOTE_C6, 250);
     this->buzzer->sound(NOTE_C6, 250);
     this->buzzer->sound(NOTE_C6, 250);
+    this->buzzer->sound(NOTE_C6, 250);
+    this->buzzer->end(1000);
+}
+
+void AlarmBuzzer::off()
+{
+    this->buzzer->begin(0);
+    this->buzzer->sound(NOTE_C6, 750);
     this->buzzer->end(1000);
 }
 
