@@ -9,17 +9,31 @@ enum parktronic_states {
     PARK_ASSIST_ON
 };
 
+/**
+ * @brief
+ * Този клас е базов клас на полиморфичен обект,
+ * който се използва като машина на състоянията - state mchine.
+*/
+
 class Parktronic
 {
-    private:
+    // Protected за да може да се достъпва от тези които наследяват този клас.
+    protected:
         Cluster *cluster_left;
         Cluster *cluster_center_left;
         Cluster *cluster_center_right;
         Cluster *cluster_right;
         AlarmBuzzer *alarm_buzzer;
-    public:
-        bool park_assist_state = PARK_ASSIST_OFF;
 
+        uint32_t current_cluster = 0;
+
+    public:
+        // C++11 инициализиране на променливите които се ползват за съхранение на текущото
+        // състояние на машината на състоянията и на стойността на бутона.
+        bool button_value = PARK_ASSIST_OFF;
+
+        // Конструктора се ползва за инициализиране на поделементите на класа,
+        // той не може да е виртуален.
         Parktronic() {
             this->cluster_left = new Cluster(1);
             this->cluster_center_left = new Cluster(2);
@@ -28,10 +42,44 @@ class Parktronic
             this->alarm_buzzer = new AlarmBuzzer();
         }
 
-        void state_machine(parktronic_states state);
+        // Задължително е при виртуално наследяване деструктора да е виртуален.
+        virtual ~Parktronic() {
+            delete this->cluster_left;
+            delete this->cluster_center_left;
+            delete this->cluster_center_right;
+            delete this->cluster_right;
+            delete this->alarm_buzzer;
+        }
+        // Виртуална функция, която ще се override-ва
+        // override - означава че се променя тялото на фукнцията по време на изпълнение
+        virtual void state_machine();
         void distance_test();
         void off();
         void blink_once();
+};
+
+/**
+ * @brief
+ * Това е нормалното състояние на системата.
+ */
+class ParktronicStateNormal : public Parktronic {
+    public:
+        virtual void state_machine();
+    virtual ~ParktronicStateNormal() {
+
+    }
+};
+
+/**
+ * @brief
+ * Това е състоянието за изход от системата.
+ */
+class ParktronicStateExit : public ParktronicStateNormal {
+    public:
+        virtual void state_machine();
+    virtual ~ParktronicStateExit() {
+
+    }
 };
 
 #endif // PARKTRONIC_H

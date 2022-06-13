@@ -22,8 +22,6 @@ class Cluster
             this->cluster = cluster_index;
 
         }
-        // void on();
-        // void off();
         void sonicsensor_test();
         void cluster_state_machine();
 };

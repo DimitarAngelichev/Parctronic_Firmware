@@ -7,7 +7,7 @@ void Cluster::sonicsensor_test()
     delay(60);
 }
 
- void  Cluster::cluster_state_machine () {
+void  Cluster::cluster_state_machine () {
 
     int dist = this->usonic_sensor->get_value ();
     Serial.print("Cluster Nr: ");
