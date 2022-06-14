@@ -20,6 +20,8 @@ public:
     LedCluster(int number);
     void led_cluster_state_machine(int dist);
     void init(int nr);
+
+    int dist_level;
 };
 
 #endif // LED_CLUSTER_H

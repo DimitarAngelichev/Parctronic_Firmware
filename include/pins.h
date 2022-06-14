@@ -3,7 +3,7 @@
 #ifndef PINS_H
 #define PINS_H
 
-#define BUTTON_PIN 49
+#define SWITCH_PIN 49
 
 #define LEDG1_1 22
 #define LEDG1_2 23
@@ -45,16 +45,16 @@
 #define LEDR4_2 A1
 #define LEDR4_3 A0
 
-#define SEN1_TRIG 12
-#define SEN1_ECHO 11
+#define SEN1_TRIG 6
+#define SEN1_ECHO 5
 
-#define SEN2_TRIG 10
-#define SEN2_ECHO 9
+#define SEN2_TRIG 8
+#define SEN2_ECHO 7
 
-#define SEN3_TRIG 8
-#define SEN3_ECHO 7
+#define SEN3_TRIG 9
+#define SEN3_ECHO 10
 
-#define SEN4_TRIG 6
-#define SEN4_ECHO 5
+#define SEN4_TRIG 12
+#define SEN4_ECHO 11
 
 #endif  // PINS_H

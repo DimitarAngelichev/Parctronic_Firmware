@@ -6,21 +6,24 @@
 #include <u_sensor.h>
 #include "../../include/pins.h"
 
+/**
+ * @brief
+ *
+*/
 class Cluster
 {
-    private:
-        LedCluster *ledCluster;
-        USonicSensor *usonic_sensor;
-        int cluster = 0;
-
     public:
-        Cluster (int cluster_index) {
-            this->ledCluster = new LedCluster(cluster_index);
-            this->usonic_sensor = new USonicSensor(cluster_index);
-            this->cluster = cluster_index;
+        LedCluster *ledCluster;      // Деклариране на група светлодиоди
+        USonicSensor *usonic_sensor; // и ултразвуков сензор към тях.
 
+        // Конструктора на групата.
+        Cluster (int cluster_index) {
+            // Алокиране и инициализиране на LedCluster
+            this->ledCluster = new LedCluster(cluster_index);
+            // Алокиране и инициализиране на USonicSensor
+            this->usonic_sensor = new USonicSensor(cluster_index);
         }
-        void sonicsensor_test();
+
         void cluster_state_machine();
 };
 #endif // CLUSTER_H
