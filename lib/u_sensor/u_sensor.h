@@ -29,7 +29,7 @@ class USonicSensor
                     break;
             }
         };
-        
+
         int get_value();
         void on();
         void off();

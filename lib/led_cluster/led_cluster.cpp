@@ -2,6 +2,7 @@
 #include "../../include/pins.h"
 #include <led.h>
 #include <Arduino.h>
+#include <parktronic.h>
 
 LedCluster::LedCluster(int number)
 {
@@ -64,9 +65,16 @@ void LedCluster::init(int nr)
             break;
     }
 }
-void LedCluster::LedClusterTest(int dist)
+
+extern Parktronic *park_assist;
+
+void LedCluster::led_cluster_state_machine(int dist)
 {
-    //Serial.print("running LedClusterTest for cluster 1\n");
+    //Serial.print("running led_cluster_state_machine for cluster 1\n");
+    /* if level is higher than last, update the top dist level */
+    if (dist > park_assist->dist_level) {
+        park_assist->dist_level = dist;
+    }
 
     switch (dist) {
         case 1:

@@ -26,6 +26,8 @@ class Parktronic
         AlarmBuzzer *alarm_buzzer;
 
         uint32_t current_cluster = 0;
+        /* top dist level */
+        uint32_t dist_level = 0;
 
     public:
         // C++11 инициализиране на променливите които се ползват за съхранение на текущото
@@ -64,6 +66,7 @@ class Parktronic
  */
 class ParktronicStateNormal : public Parktronic {
     public:
+    ParktronicStateNormal() {}
         virtual void state_machine();
     virtual ~ParktronicStateNormal() {
 
@@ -76,6 +79,7 @@ class ParktronicStateNormal : public Parktronic {
  */
 class ParktronicStateExit : public ParktronicStateNormal {
     public:
+    ParktronicStateExit() {}
         virtual void state_machine();
     virtual ~ParktronicStateExit() {
 

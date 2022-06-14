@@ -25,22 +25,9 @@ void setup()
     Serial.begin(9600);
     pinMode(BUTTON_PIN, INPUT);
 
-    /** Първо се инициализира обекта, който се намира на най - високо ниво в йерархията,
-      * за да се задоволят изискванията за подравняване (Alignment)
-      * Това е добра практика според стандарта
-      * Ако това не се направи има неопределени последствия, тъй като ако той съдържа
-      * подобекти които не фигурират по - надолу в йерархията, при сменяне на типа може да
-      * се счупи програмата
-    **/
-    park_assist = new ParktronicStateExit();
-
-    // ~decltype вика виртуалния деструктор на park_assist, който ще извика всички деструктори
-    // на текущия тип (ParktronicStateExit)
-    park_assist->~decltype(park_assist)();
-
     // Пресъздава се обекта с ново състояние - ParktronicStateNormal - началното състояние
     // на машината
-    new (park_assist) ParktronicStateNormal{};
+    park_assist = new ParktronicStateNormal{};
 }
 
 /** @brief

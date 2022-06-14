@@ -1,3 +1,5 @@
+#include <Arduino.h>
+
 #ifndef PINS_H
 #define PINS_H
 
@@ -33,26 +35,26 @@
 #define LEDR3_2 47
 #define LEDR3_3 48
 
-#define LEDG4_1 2
-#define LEDG4_2 3
-#define LEDG4_3 4
-#define LEDY4_1 5
-#define LEDY4_2 6
-#define LEDY4_3 7
-#define LEDR4_1 8
-#define LEDR4_2 9
-#define LEDR4_3 10
+#define LEDG4_1 A8
+#define LEDG4_2 A7
+#define LEDG4_3 A6
+#define LEDY4_1 A5
+#define LEDY4_2 A4
+#define LEDY4_3 A3
+#define LEDR4_1 A2
+#define LEDR4_2 A1
+#define LEDR4_3 A0
 
 #define SEN1_TRIG 12
 #define SEN1_ECHO 11
 
-#define SEN2_TRIG 0xA0
-#define SEN2_ECHO 0xA1
+#define SEN2_TRIG 10
+#define SEN2_ECHO 9
 
-#define SEN3_TRIG 0xA2
-#define SEN3_ECHO 0xA3
+#define SEN3_TRIG 8
+#define SEN3_ECHO 7
 
-#define SEN4_TRIG 0xA4
-#define SEN4_ECHO 0xA5
+#define SEN4_TRIG 6
+#define SEN4_ECHO 5
 
 #endif  // PINS_H

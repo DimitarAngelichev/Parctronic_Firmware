@@ -9,8 +9,6 @@
 class Cluster
 {
     private:
-        // class LedClister;
-        //HCSR04 *hc;
         LedCluster *ledCluster;
         USonicSensor *usonic_sensor;
         int cluster = 0;

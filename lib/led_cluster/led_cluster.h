@@ -18,7 +18,7 @@ private:
 
 public:
     LedCluster(int number);
-    void LedClusterTest(int dist);
+    void led_cluster_state_machine(int dist);
     void init(int nr);
 };
 
